@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from qiniu import Auth
-from qiniu import BucketManager, put_file, etag
 import sys
 import codecs
+from qiniu import Auth
+from qiniu import BucketManager, put_file, etag
 import config
 
 def qiniu_update(file_name):
@@ -15,7 +15,7 @@ def qiniu_update(file_name):
 
     input_file.close()
 
-    ouput_file = codecs.open(file_name, 'w', 'utf8')
+    output_file = codecs.open(file_name, 'w', 'utf8')
     new_text = ''
 
     for line in text:
@@ -33,8 +33,8 @@ def qiniu_update(file_name):
     # 上传图片
     upload_imgs(img_list, file_name)
 
-    ouput_file.writelines(new_text)
-    ouput_file.close()
+    output_file.writelines(new_text)
+    output_file.close()
     
 def upload_imgs(img_list, file_name):    
     access_key = config.ACCESS_KEY

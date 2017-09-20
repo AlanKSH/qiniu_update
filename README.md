@@ -7,3 +7,9 @@ Replace local images by external URLs.
 `python qiniu_update.py <file>`
 
 
+
+## Todo:
+
+- Add more cloud services
+
+
